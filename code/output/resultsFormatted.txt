@@ -1,0 +1,119 @@
+all 100
+  classification
+    mfcc:
+      KNN classifier: Accuracy: 0.32
+      Linear SVC: Accuracy: 0.6
+      Gaussian NB: Accuracy: 0.52
+      SVC: Accuracy: 0.44
+    pitch solo:
+      KNN classifier: Accuracy: 0.28
+      Linear SVC: Accuracy: 0.22
+      Gaussian NB: Accuracy: 0.36
+      SVC: Accuracy: 0.22
+    pitch orig:
+      KNN classifier: Accuracy: 0.22
+      Linear SVC: Accuracy: 0.28
+      Gaussian NB: Accuracy: 0.3
+      SVC: Accuracy: 0.2
+    combined solo:
+      KNN classifier: Accuracy: 0.28
+      Linear SVC: Accuracy: 0.16
+      Gaussian NB: Accuracy: 0.54
+      SVC: Accuracy: 0.26
+    combined orig:
+      KNN classifier: Accuracy: 0.22
+      Linear SVC: Accuracy: 0.1
+      Gaussian NB: Accuracy: 0.3
+      SVC: Accuracy: 0.2
+
+  clustering
+    mfcc:
+      Homgenity: 0.411
+      Completeness: 0.437
+      V_measure: 0.424
+      Adjusted_rand_score: 0.173
+      Adjusted Mutual Info: 0.262
+    pitch solo:
+      Homgenity: 0.379
+      Completeness: 0.418
+      V_measure: 0.397
+      Adjusted_rand_score: 0.160
+      Adjusted Mutual Info: 0.234
+    pitch orig:
+      Homgenity: 0.343
+      Completeness: 0.412
+      V_measure: 0.374
+      Adjusted_rand_score: 0.122
+      Adjusted Mutual Info: 0.203
+    combined solo:
+      Homgenity: 0.372
+      Completeness: 0.416
+      V_measure: 0.393
+      Adjusted_rand_score: 0.134
+      Adjusted Mutual Info: 0.228
+    combined orig:
+      Homgenity: 0.350
+      Completeness: 0.401
+      V_measure: 0.374
+      Adjusted_rand_score: 0.128
+      Adjusted Mutual Info: 0.207
+
+classical, pop, rock
+  classification
+    mfcc:
+      KNN classifier: Accuracy: 0.466666666667
+      Linear SVC: Accuracy: 0.733333333333
+      Gaussian NB: Accuracy: 0.933333333333
+      SVC: Accuracy: 0.6
+    pitch solo:
+      KNN classifier: Accuracy: 0.466666666667
+      Linear SVC: Accuracy: 1.0
+      Gaussian NB: Accuracy: 0.933333333333
+      SVC: Accuracy: 0.8
+    pitch orig:
+      KNN classifier: Accuracy: 0.466666666667
+      Linear SVC: Accuracy: 0.933333333333
+      Gaussian NB: Accuracy: 1.0
+      SVC: Accuracy: 0.6
+    combined solo:
+      KNN classifier: Accuracy: 0.466666666667
+      Linear SVC: Accuracy: 0.933333333333
+      Gaussian NB: Accuracy: 0.933333333333
+      SVC: Accuracy: 0.8
+    combined orig:
+      KNN classifier: Accuracy: 0.466666666667
+      Linear SVC: Accuracy: 0.866666666667
+      Gaussian NB: Accuracy: 1.0
+      SVC: Accuracy: 0.6
+
+  clustering
+    mfcc:
+      Homgenity: 0.389
+      Completeness: 0.441
+      V_measure: 0.413
+      Adjusted_rand_score: 0.340
+      Adjusted Mutual Info: 0.342
+    pitch solo:
+      Homgenity: 1.000
+      Completeness: 1.000
+      V_measure: 1.000
+      Adjusted_rand_score: 1.000
+      Adjusted Mutual Info: 1.000
+    pitch orig:
+      Homgenity: 1.000
+      Completeness: 1.000
+      V_measure: 1.000
+      Adjusted_rand_score: 1.000
+      Adjusted Mutual Info: 1.000
+    combined solo:
+      Homgenity: 1.000
+      Completeness: 1.000
+      V_measure: 1.000
+      Adjusted_rand_score: 1.000
+      Adjusted Mutual Info: 1.000
+    combined orig:
+      Homgenity: 1.000
+      Completeness: 1.000
+      V_measure: 1.000
+      Adjusted_rand_score: 1.000
+      Adjusted Mutual Info: 1.000
