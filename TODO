@@ -1,5 +1,0 @@
-tap = wavread('../../../data/gtzan-proc/genres/blues/solo/blues_solo.00000.wav')
-ceps = mfcc(tap,22050);
-ceps = ceps'
-mean(ceps)
-var(ceps)
