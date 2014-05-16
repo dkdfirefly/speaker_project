@@ -2,6 +2,7 @@ import numpy as np
 from sklearn import cluster
 from sklearn import metrics
 from sklearn import neighbors
+from sklearn.metrics import confusion_matrix
 from sklearn.naive_bayes import GaussianNB
 from sklearn import svm
 import sys
@@ -93,30 +94,42 @@ def main(argv):
 
   print
   print 'KNN classifier:'
+  print '--------------'
+  print 'Confusion Matrix'
   knn = neighbors.KNeighborsClassifier(n_neighbors = 10)
   knn.fit(dataNP,labels)
-  print '\tPredicted Output: ' + str(knn.predict(predNP))
+  cm = confusion_matrix(labels, knn.predict(predNP))
+  print str(cm)
   print '\tAccuracy: ' + str(knn.score(predNP, labels))
 
   print
   print 'Linear SVC'
+  print '--------------'
+  print 'Confusion Matrix'
   clf = svm.LinearSVC()
   clf.fit(dataNP, labels)  
-  print '\tPredicted Output: ' + str(clf.predict(predNP))
+  cm = confusion_matrix(labels, clf.predict(predNP))
+  print str(cm)
   print '\tAccuracy: ' + str(clf.score(predNP, labels))
 
   print
   print 'Gaussian NB'
+  print '--------------'
+  print 'Confusion Matrix'
   gnb = GaussianNB()
   gnb.fit(dataNP,labels)
-  print '\tPredicted Output: ' + str(gnb.predict(predNP))
+  cm = confusion_matrix(labels, gnb.predict(predNP))
+  print str(cm)
   print '\tAccuracy: ' + str(gnb.score(predNP, labels))
 
   print
   print 'SVC'
+  print '--------------'
+  print 'Confusion Matrix'
   clf = svm.SVC()
   clf.fit(dataNP, labels)
-  print '\tPredicted Output: ' + str(clf.predict(predNP))
+  cm = confusion_matrix(labels, clf.predict(predNP))
+  print str(cm)
   print '\tAccuracy: ' + str(clf.score(predNP, labels))
 
 
