@@ -18,6 +18,9 @@ However, most of files required to demo are included along.
 
 Additionally, I will send over the dropbox link for the processed dataset, which again may not be required for demo as the extracted 
 features are included along with this submission.
+
+The instructions for install of the required packages can be found here:
+http://scikit-learn.org/stable/install.html
 ======================================================================================================
 
 # Basic demo:
