@@ -459,7 +459,7 @@
 % note need leading \protect in front of \\ to get a newline within \thanks as
 % \\ is fragile and will error, could use \hfil\break instead.
 E-mail: ds3267@columbia.edu}% <-this % stops a space
-\thanks{Manuscript received April 10, 2014.}}
+\thanks{Manuscript received May 16, 2014.}}
 
 % note the % following the last \IEEEmembership and also \thanks - 
 % these prevent an unwanted space from occurring between the last author name
@@ -603,7 +603,7 @@ Melody Extraction, Audio signal separation, Genre classification, pitch estimati
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-The task of genre classification entails assigning labels based on the characteristics of music. The applications for it can be varied, for casual users, it can be for listening to similar kinds of music; academic/professional users may want to find related sequences to analyze and study, while the music industry needs it for efficient retrieval and storage. But as easy it may seem, it is no trivial task. While this comes naturally to people, it is quite difficult to automate it, due to polyphony. And due the volume of audio files generated, it is simply impossible to label everything by hand. The concept of genre is very subjective, a particular song could be a combination of two or more different styles; or it may be simple difficult to classify a particular song to a genre. This increases the difficulty in classification. Also, the use of various instruments along with the main melody leads to a polyphonic signal which is hard to analyse and represent by sufficiently descriptive features. The paper proposes a model based on melody features from source separated audio. While the approach does not succeed in the strictly general sense, it show promising results for a restricted conducive scenario, and signs of improvement for other features when used in combination.
+The task of genre classification entails assigning labels based on the characteristics of music. The applications for it can be varied, for casual users, it can be for listening to similar kinds of music; academic/professional users may want to find related sequences to analyze and study, while the music industry needs it for efficient retrieval and storage. But as easy it may seem, it is no trivial task. While this comes naturally to people, it is quite difficult to automate it, due to polyphony. And due to the volume of audio files generated, it is simply impossible to label everything by hand. The concept of genre is very subjective, a particular song could be a combination of two or more different styles; or it may be simply difficult to classify a particular song to a genre. This increases the difficulty in classification. Also, the use of various instruments along with the main melody leads to a polyphonic signal which is hard to analyse and represent by sufficiently descriptive features. The paper proposes a model based on melody features from source separated audio. While the approach does not succeed in the strictly general sense, it show promising results for a restricted conducive scenario, and signs of improvement for other features when used in combination.
 
 
 % You must have at least 2 lines in the paragraph with the drop letter
@@ -752,7 +752,7 @@ Also, \cite{salamon01} which uses melody features was able to obtain about 50-60
 
 \section{Approach}
 
-Each of the following steps are performed in the order mentioned to obtain the final result.
+Each of the following sections explains the individual steps involved in the order to obtain the final result.
 
 \subsection{Source Separation}
 
@@ -764,7 +764,7 @@ This is based on the source/filter model proposed in \cite{durrieu01} and furthe
     \label{fig:fig1}
 \end{figure}
 
-As shown in Fig. \ref{fig:fig1}, the overall system is two step melody tracker which relies on parametrization of the power spectrogram. In the first step, parameters of a short time Fourier transform (STFT) of the mixture signal are estimated and the posterior probabilities are computed. The second step outputs the desired sequence after a melody smoothing block based on the Viterbi algorithm \cite{viterbi}.
+As shown in Fig. \ref{fig:fig1}, the overall system is a two step melody tracker which relies on parametrization of the power spectrogram. In the first step, parameters of a short time Fourier transform (STFT) of the mixture signal are estimated and the posterior probabilities are computed. The second step outputs the desired sequence after a melody smoothing block based on the Viterbi algorithm \cite{viterbi}.
 
 \begin{figure}[H]
 \includegraphics[scale=0.12]{images/fig2}
@@ -780,13 +780,13 @@ Fig. \ref{fig:fig2} shows the general principle of the parametrization of the si
     \label{fig:fig3}
 \end{figure}
 
-The source/filter model is depicted in \ref{fig:fig3}. Each source excitation is filtered through each of the filters and the amplitudes for a frame are applied to each of the output signals. The final state selector sets the active state for a given frame based on its likelihood given the source, filter pairs; and each of the is scaled by the amplitude. This likelihood estimation is similar to a Gaussian Mixture Model (GMM) and Estimation Maximization (EM) is deployed to solve for the parameters.
+The source/filter model is depicted in \ref{fig:fig3}. Each source excitation is filtered through each of the filters and the amplitudes for a frame are applied to each of the output signals. The final state selector sets the active state for a given frame based on its likelihood given the source, filter pairs; and each of them is scaled by the amplitude. This likelihood estimation is similar to a Gaussian Mixture Model (GMM) and Expectation Maximization (EM) is deployed to solve for the parameters.
 
 In practice, the number of filters and number of accompaniment components have been derived from testing different combinations, and remains fixed during evaluation.
 
 \subsection{Feature Extraction}
 \label{sec:features}
-All the melody features have been derived from the fundamental frequencies (F0). For each of the 30 second audio track, F0 has been estimated at 5169 instances. The following have been used:
+All the melody features have been derived from the fundamental frequencies (F0). For each of the 30 second audio track, F0 has been estimated at 5169 instances. The following features have been used:
 \begin{itemize}
 \item \textbf{Pitch Based}
 		\begin{itemize}
@@ -852,7 +852,7 @@ The following tools were used for carrying out the above mentioned tasks:
 \end{itemize}
 
 \section{Dataset}
-A subset of the GTZAN dataset \cite{gtzan} is used for all evaluation criteria. The dataset consists of 1000 audio tracks each 30 seconds long. It contains 10 genres, each represented by 100 tracks. The tracks are all 22050Hz Mono 16-bit audio files in .au format. Of these the first 10 audio tracks from each of the 10 genres have been analyzed. The audio files had to be converted from .au format to the .wav format for further processing. A linux utility known as soxexam was used for the conversion.
+A subset of the GTZAN dataset \cite{gtzan} is used for all the evaluation criteria. The dataset consists of 1000 audio tracks each 30 seconds long. It contains 10 genres, each represented by 100 tracks. The tracks are all 22050Hz Mono 16-bit audio files in .au format. Of these the first 10 audio tracks from each of the 10 genres have been analyzed. The audio files had to be converted from .au format to the .wav format for further processing. A linux utility known as soxexam was used for the conversion.
 
 The dataset contains tracks under the following categories (the description is from their respective Wikipedia articles):
 \begin{itemize}
